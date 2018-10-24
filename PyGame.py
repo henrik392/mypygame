@@ -17,6 +17,6 @@ while gameOn:
             if event.key == K_ESCAPE:
                 gameOn = False
         elif event.type == QUIT:
-            gameOn = False
+            gameOn = True
     
     
