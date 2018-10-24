@@ -1,22 +1,31 @@
 import pygame
 from pygame.locals import *
 
+class Player(pygame.sprite.Sprite):
+    def __init__   (self):
+        super(Player, self).__init__()
+        self.surf = pygame.Surface((75, 25))
+        self.surf.fill((255, 255, 255))
+        self.rect = self.surf.get_rect()
+
 pygame.init()
 
 screen = pygame.display.set_mode((800, 600))
 
-surf = pygame.Surface((50, 50))
-surf.fill((255, 255, 255))
-rect = surf.get_rect()
+player = Player()
 
 gameOn = True
 
 while gameOn:
+    # loop trough the event queue
     for event in pygame.event.get():
         if event.type == KEYDOWN:
             if event.key == K_ESCAPE:
                 gameOn = False
         elif event.type == QUIT:
             gameOn = False
-    
-    
+
+    # draw player to the screen
+    screen.blit(player.surf, (400, 300))
+    # update display
+    pygame.display.flip()
