@@ -1,2 +1,2 @@
-# mypygame
+# Henriks Pygame
 Hjelp Meg
